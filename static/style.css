@@ -1,0 +1,18 @@
+nav ul{
+    height: 150px;
+    width: 100%;
+    background-color: rgb(117, 117, 178);
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}

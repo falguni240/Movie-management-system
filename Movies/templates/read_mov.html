@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<a href="{% url 'create_mov' %}"><button>ADD MOVIES</button></a>
+
+<h1>Movie Details....</h1>
+
+{% for i in context %}
+
+Name:{{ i.mname }} <br>
+Director:{{ i.director }} <br>
+Genre:{{ i.genre }} <br>
+Rating:{{ i.rating }} <br>
+Release Date:{{ i.release_date }} <br>
+Ticket Price:{{ i.price }} <br>
+Available:{{ i.avail }} <br>
+ 
+<a href="{% url 'update_mov' i.id %}"><button>UPDATE</button></a>
+
+<a href="{% url 'delete_mov' i.id %}"><button>DELETE</button></a><br><br>
+
+{% endfor %}
+
+{% endblock %}

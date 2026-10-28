@@ -1,0 +1,34 @@
+{% extends "main.html" %}
+
+{% block content %}
+<h1>Booking Details Available here....</h1>
+<table border="2">
+    <tr>
+        <th>USER</th>
+        <th>MOVIE</th>
+        <th>DATE</th>
+        <th>TICKETS</th>
+        <th>TOTAL PRICE</th>
+        <th colspan="2">ACTION</th>
+    </tr>
+
+    {% for i in context %}
+    <tr>
+        <td>{{ i.users }}</td>
+        <td>{{ i.movies }}</td>
+        <td>{{ i.mov_date }}</td>
+        <td>{{ i.tickets }}</td>
+        <td>{{ i.tot_price }}</td>
+    </tr>
+
+    <tr>
+        <td><a href="{% url 'update_book' i.id %}"><button>UPDATE</button></a></td>
+        <td><a href="{% url 'delete_book' i.id %}"><button>DELETE</button></a></td>
+    </tr>
+    {% endfor %}
+
+</table><br>
+
+<a href="{% url 'add_book' %}"><button>BACK</button></a>
+
+{% endblock %}
